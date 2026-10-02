@@ -223,6 +223,31 @@ details.more>summary::-webkit-details-marker{display:none}
 details.more>summary::before{content:"▸ ";font-size:10px} details.more[open]>summary::before{content:"▾ "}
 details.more .kv{margin-top:8px}
 
+/* 展開：左邊數字，右邊圖 */
+.sl-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px;align-items:start}
+.kc{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 10px 6px;min-width:0}
+.kc-h{display:flex;gap:10px;align-items:baseline;font-size:12px;margin:0 2px 6px}
+.kc-h .faint{font-family:var(--mono);font-size:11px;margin-left:auto}
+.kc-plot{position:relative}
+.kc-plot svg{display:block;touch-action:pan-y;outline:none;max-width:100%}
+.kc-plot svg:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;border-radius:4px}
+.kc-grid{stroke:#e8edf4;stroke-width:1}
+.kc-ax{fill:var(--faint);font:10.5px var(--mono)}
+.kc-u{fill:var(--up);stroke:var(--up)} .kc-d{fill:var(--down);stroke:var(--down)}
+.kc-w{stroke-width:1} rect.kc-u,rect.kc-d{stroke:none}
+.kc-v{opacity:.5}
+.kc-lastbg{fill:var(--text)} .kc-last{fill:#fff;font:600 10.5px var(--mono)}
+.kc-x{stroke:var(--muted);stroke-width:1;pointer-events:none}
+.kc-hit{fill:transparent;cursor:crosshair}
+.kc-tip{position:absolute;top:4px;pointer-events:none;background:rgba(255,255,255,.96);
+  border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-2);
+  padding:7px 10px;font-size:11.5px;min-width:118px}
+.kc-tip .d{font-family:var(--mono);color:var(--muted);margin-bottom:3px}
+.kc-tip .r{display:flex;gap:10px;justify-content:space-between;align-items:baseline}
+.kc-tip .r b{font-family:var(--mono);font-weight:700;color:var(--text);order:2}
+.kc-tip .r b.up{color:var(--up)} .kc-tip .r b.down{color:var(--down)}
+.kc-tip .r .k{color:var(--faint);order:1}
+
 /* ── 清單 ── */
 .grp{margin-bottom:12px}
 .grp-h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
@@ -280,6 +305,8 @@ ul.why li .t{color:var(--text)}
   .sl-r .chev{display:none}
   .c-err{grid-column:1 / -1}
   .sl-body{padding:6px 14px 14px}
+  .sl-cols{grid-template-columns:minmax(0,1fr);gap:14px}
+  .kc{order:-1}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
