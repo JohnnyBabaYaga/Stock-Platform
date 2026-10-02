@@ -33,6 +33,10 @@
 -->
 <style>
 :root{
+  /* 樣式版本。改了版面樣式就 +1，私有程式的 UI_VER 也要跟著改。
+     殼放在 GitHub Pages、會被瀏覽器快取 10 分鐘，私有程式卻每次都抓最新的 ——
+     兩邊對不上時，私有程式看到這個數字太舊，會請使用者重新整理。 */
+  --ui-ver:3;
   /* 底色與玻璃質感完全沿用 Manager Platform */
   --blue:#1f4e96; --blue2:#2f6fd0;
   --bg:#eef2f7; --card:#fff; --line:#dde4ee;
